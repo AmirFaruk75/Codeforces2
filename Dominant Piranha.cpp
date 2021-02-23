@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    long long int t,n,a[300000],i,j,b[300000],c=0,d,e,f,g,h;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        for(i=0;i<n;i++)
+        {
+            cin>>a[i];
+            b[i]=a[i];
+        }
+        sort(a,a+n);
+        for(i=0;i<n-1;i++)
+        {
+            if(a[i]==a[i+1])
+            {
+                c++;
+            }
+        }
+        if(c==n-1)
+        {
+            cout<<-1<<endl;
+        }
+        else{
+            for(i=0;i<n;i++)
+            {
+                if(a[n-1]==b[i])
+                {
+                    if(i==0)
+                    {
+                        if(b[i]>b[i+1])
+                        {
+                            cout<<i+1<<endl;
+                            break;
+                        }
+                    }
+                    else{
+                        if(b[i]>b[i+1] || b[i]>b[i-1])
+                        {
+                            cout<<i+1<<endl;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        c=0;
+    }
+}

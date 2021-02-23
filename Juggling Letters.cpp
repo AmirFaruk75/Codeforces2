@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    int t,n,a,b=1001,c=1,d=0,e=1,f,g=0,h,i,j;
+    string s,w;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        h=n;
+        while(n--)
+        {
+            cin>>s;
+            w+=s;
+        }
+        a=w.length();
+        sort(w.begin(),w.end());
+        for(i=0;i<a;i++)
+        {
+            if(w[i]==w[i+1])
+            {
+                c++;
+            }
+            else{
+                if(c<b)
+                {
+                    b=c;
+                }
+                c=1;
+            }
+        }
+
+        if(b%h!=0)
+        {
+            cout<<"NO"<<endl;
+        }
+        else{
+            for(i=0;i<a;i++)
+            {
+                if(w[i]==w[i+1])
+                {
+                    e++;
+                }
+                else{
+                    if(e%b!=0)
+                    {
+                        d=1;
+                        break;
+                    }
+                    e=1;
+                }
+            }
+            if(d==0)
+            {
+                cout<<"YES"<<endl;
+            }
+            else{
+                cout<<"NO"<<endl;
+            }
+        }
+        w.clear();
+        b=1001;c=1;d=0;e=1;
+    }
+}

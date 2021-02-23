@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    long long int t,n,a[100000],i,j,b=0,c=0,cum=0,sum;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        for(i=0;i<n;i++)
+        {
+            cin>>a[i];
+            if(a[i]==1)
+            {
+                b++;
+            }
+            else{
+                c++;
+            }
+        }
+        sum=c*2;
+        if(b%2!=0)
+        {
+            cout<<"NO"<<endl;
+        }
+        else{
+            if(b==0)
+            {
+                if(c%2!=0)
+                {
+                    cout<<"NO"<<endl;
+                }
+                else{
+                    cout<<"YES"<<endl;
+                }
+            }
+            else{
+                cout<<"YES"<<endl;
+            }
+        }
+        b=0;c=0;
+    }
+}

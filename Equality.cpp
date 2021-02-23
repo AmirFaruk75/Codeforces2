@@ -1,0 +1,69 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    int n,k,i,j,a=1,b=1,c=200005,d=0,e=0,f=1,g=200005,h=0;
+    string s;
+    cin>>n>>k;
+    cin>>s;
+    sort(s.begin(),s.end());
+    for(i=0;i<n-1;i++)
+    {
+        if(s[i]!=s[i+1])
+        {
+            a++;
+        }
+    }
+    if(k>a)
+    {
+        cout<<0<<endl;
+    }
+    else if(k==a)
+    {
+        for(i=0;i<n;i++)
+        {
+            if(s[i]==s[i+1])
+            {
+                b++;
+            }
+            else{
+                if(b<c)
+                {
+                    c=b;
+                }
+                b=1;
+            }
+        }
+        cout<<c*k<<endl;
+    }
+    else{
+        for(i=0;i<n;i++)
+        {
+            if(s[i]!=s[i+1])
+            {
+                d++;
+            }
+            e++;
+            if(d==k)
+            {
+                break;
+            }
+        }
+        for(i=0;i<e;i++)
+        {
+            if(s[i]==s[i+1])
+            {
+                f++;
+            }
+            else{
+                if(f<g)
+                {
+                    g=f;
+                }
+                f=1;
+            }
+        }
+        cout<<g*k;
+    }
+}

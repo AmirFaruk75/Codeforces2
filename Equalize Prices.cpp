@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    int t,n,k,a[100000],b,c,d=0,e,f,g,h,i,j;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>k;
+        for(i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+        sort(a,a+n);
+        b=a[0]+k;
+        for(i=0;i<n;i++)
+        {
+            c=b-a[i];
+            if(c<0)
+            {
+                c=c*(-1);
+            }
+            if(c>k)
+            {
+                d=1;
+                break;
+            }
+        }
+        if(d==0)
+        {
+            cout<<b<<endl;
+        }
+        else{
+            cout<<-1<<endl;
+        }
+        d=0;
+    }
+}
